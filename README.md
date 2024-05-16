@@ -1,11 +1,15 @@
 # Backend App
 
+## Design document
+
+Refer to [design.md](./design.md) for more details.
+
 ## How to run the app
 
 * First clone the repository
 
 ```commandline
-git clone https://github.com/MingDevp/leads.git
+git clone git@github.com:MingDevp/leads.git
 ```
 
 * Go to `./leads` folder, establish a virtual environment, install Python packages
