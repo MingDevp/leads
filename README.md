@@ -44,6 +44,7 @@ cd ./app
 fastapi dev main.py
 ```
 App is served at http://127.0.0.1:8000
+
 API documentation can be found at http://127.0.0.1:8000/docs
 
 [![API docs](img/docs.png)](https://github.com/MingDevp/leads)
@@ -53,7 +54,9 @@ If seeing error like `ModuleNotFoundError: No module named 'passlib'`, need to i
 pip install passlib
 ```
 
-* Script `prestart.sh` first starts PostgreSQL db, then create tables. This script is taken from
-https://github.com/tiangolo/full-stack-fastapi-template. Some POST API and running the script gives me error
-`(psycopg.OperationalError) [Errno 8] nodename nor servname provided, or not known`. There is a problem
-to be fixed in my setting up PostgreSQL.
+* Some POST APIs and the `prestart.sh` script give me error
+```
+sqlalchemy.exc.OperationalError: (psycopg.OperationalError) [Errno 8] nodename nor servname provided, or not known
+```
+There is a problem to be fixed in my setting up for PostgreSQL. The script `prestart.sh` first starts PostgreSQL db, then
+create tables. This script is taken from https://github.com/tiangolo/full-stack-fastapi-template.
