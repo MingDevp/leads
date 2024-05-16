@@ -14,10 +14,14 @@ This API also sends emails, which can be refactored into an async background tas
 
 ### API used by attorney inside the company:
 
-* `login(session, form_data)` serves POST request to URL `/login/`.
+* `login(session, form_data)` serves POST request to URL `/`.
 
 `form_data` is request body containing username and password sent from client. `session` is needed for authentication 
 against credentials stored in db. This API issues a token good for 8 days after a successful auth.
+
+* `login()` serves GET request to URL `/`.
+
+Pseudo HTML pages for attorneys to log in by auth.
 
 * `get_leads(session, skip, limit)` serves GET request to URL `/leads/`.
 
