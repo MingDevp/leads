@@ -31,6 +31,7 @@ The query parameter `new_state` is Enum type with predefined values.
 
 ## Database design
 
+### Tables
 Choose Relational Database (in particular PostgreSQL which works well with FastAPI) for data persistence (more discussion 
 in Tradeoffs section below).
 
@@ -50,6 +51,7 @@ Two tables are defined in SQL database:
 * hashed_password
 * is_active
 
+### Media file
 The resume files uploaded by prospects can be stored on local file system of the server. Capacity estimation: suppose 
 average resume pdf file has 100KB, for 100K prospects, the required storage is 10GB. A server should have enough disk space.
 But consider redundancy and failover, we could choose to store the resume files in Amazon S3. The data will be 
