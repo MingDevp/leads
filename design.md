@@ -29,6 +29,11 @@ against credentials stored in db. This API issues a token good for 8 days after 
 Attorney can change a selected lead (associated with path parameter `id`) from PENDING to REACHED_OUT state. 
 The query parameter `new_state` is Enum type with predefined values.
 
+### User APIs
+No APIs added for `User` entity at this time because there seems no requirements to
+create/update/get users. The users (attorneys) can be directly inserted into db by SQL statements, not necessarily
+through APIs.
+
 ## Database design
 
 ### Tables
