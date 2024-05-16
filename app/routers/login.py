@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from typing import Annotated, Any
 
 from fastapi import APIRouter, Depends, HTTPException
+from fastapi.responses import HTMLResponse
 from fastapi.security import OAuth2PasswordRequestForm
 from passlib.context import CryptContext
 from sqlmodel import Session, select
@@ -14,6 +15,20 @@ from app.models import Token, User
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 router = APIRouter()
+
+
+@router.get("/")
+def login():
+    content = """
+<body>
+<form action="" method="post">
+    <div><input name="username" placeholder="Email" type="email" required></div>
+    <div><input name="password" placeholder="Password" type="password" required></div>
+    <input type="submit" name="login" value="Log In">
+</form>
+</body>
+    """
+    return HTMLResponse(content=content)
 
 
 @router.post("/")
